@@ -1,15 +1,13 @@
-// controllers/category_controller.dart
 
 import 'package:get/get.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:test_app/model/category_model.dart';
-
 class CategoryController extends GetxController {
   var categories = <Category>[].obs;
   var isLoading = true.obs;
   var pageIndex = 1.obs;
-  var totalPage = 5; // Example total pages, adjust according to your API response
+  var totalPage = 5;
   var scrollDirectionUp = false.obs;
 
   @override
@@ -17,7 +15,7 @@ class CategoryController extends GetxController {
     super.onInit();
     fetchCategories();
   }
-
+ /// fetch category data
   void fetchCategories() async {
     try {
       isLoading(true);
@@ -51,6 +49,7 @@ class CategoryController extends GetxController {
       isLoading(false);
     }
   }
+  ///load more data with using pagination
   void loadMore() {
     if (pageIndex.value < totalPage) {
       pageIndex.value++;
@@ -58,7 +57,7 @@ class CategoryController extends GetxController {
       fetchCategories();
     }
   }
-
+  ///load previous data with using pagination
   void loadPrevious() {
     if (pageIndex.value > 1) {
       pageIndex.value--;

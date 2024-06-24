@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => CategoryView()), // Example route for CategoryView
+        GetPage(name: '/', page: () => CategoryView()),
       ],
-      home: CategoryView(), // Example of setting CategoryView as home
+      home: CategoryView(),
       initialBinding: BindingsBuilder(() {
-        Get.put<CategoryController>(CategoryController()); // Registering CategoryController
+        Get.put<CategoryController>(CategoryController());
       }),
     );
   }

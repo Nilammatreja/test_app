@@ -1,4 +1,3 @@
-// ui/category/category_view.dart
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,7 +58,7 @@ class CategoryView extends StatelessWidget {
       ),
     );
   }
-
+///Tab Bar View
   Widget _buildCategoryTabs(CategoryController controller) {
     return DefaultTabController(
       length: controller.categories.length,
@@ -92,6 +91,7 @@ class CategoryView extends StatelessWidget {
     );
   }
 
+///subCategory View
   Widget _buildSubCategoryList(CategoryController controller, Category category) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
